@@ -12,3 +12,5 @@ dist/
 # System/Editor files
 .vscode/
 .DS_Store
+
+uploads/

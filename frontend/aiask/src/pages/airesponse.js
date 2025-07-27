@@ -17,7 +17,7 @@ function AiResponse() {
             return alert("Form khali hai babu");
         }
         try {
-            const response = await fetch('http://localhost:5000/api/ai/roadmap', {
+            const response = await fetch('https://ai-careerresponse.onrender.com/api/ai/roadmap', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ goal, skills })
@@ -36,7 +36,7 @@ function AiResponse() {
         if (!prompt) return alert("Pehle sawal toh daal!");
         setLoading(true);
         try {
-            const res = await fetch("http://localhost:5000/api/ai/ask", {
+            const res = await fetch("https://ai-careerresponse.onrender.com/api/ai/ask", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ query }),
@@ -58,7 +58,7 @@ function AiResponse() {
 
         setLoading(true);
         try {
-            const res = await fetch("http://localhost:5000/api/ai/resume", {
+            const res = await fetch("https://ai-careerresponse.onrender.com/api/ai/resume", {
                 method: "POST",
                 body: formData,
             });

@@ -21,7 +21,7 @@ mongoose.connect(process.env.MongoPassword, {
   console.error("❌ MongoDB connection error:", err);
 });
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://ai-careerresponse-2.onrender.com',
   credentials: true
 }));
 

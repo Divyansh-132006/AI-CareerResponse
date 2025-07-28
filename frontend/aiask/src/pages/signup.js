@@ -16,7 +16,7 @@ function Signup(){
             if( password !== confirmPassword) {
                 return alert("Passwords do not match");
             }
-            const response = await fetch('http://localhost:5000/api/ai/signup', {
+            const response = await fetch('https://ai-careerresponse.onrender.com/api/ai/signup', {
                  method: "POST",
                       headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password, email })

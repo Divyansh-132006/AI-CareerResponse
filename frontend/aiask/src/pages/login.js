@@ -8,7 +8,7 @@ function Login() {
     const handlelogin = async () => {
         if (!email || !password) return alert("Username and Password are required ");
         try {
-            const response = await fetch('http://localhost:5000/api/ai/login', {
+            const response = await fetch('https://ai-careerresponse.onrender.com/api/ai/login', {
                 method: "Post",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })

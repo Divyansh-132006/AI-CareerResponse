@@ -7,6 +7,7 @@ function Signup(){
     const [email, setemail]= useState('');
     const [password, setpassword]= useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+ const [showMenu, setShowMenu] = useState(false);
 
     const handleSignup = async () => {
         if (!username || !email || !password || !confirmPassword) {
@@ -84,18 +85,34 @@ function Signup(){
                     Signup
                 </button>
             </div>
-             <button
-                onClick={() => window.location.href = '/'}
-        className="absolute top-4 right-4 z-50 bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition "
-      >
-        AskAnything
-      </button>
-      <button
-        onClick={() => window.location.href = '/login'}
-        className="absolute top-16 right-12 z-50 bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition "
-      >
-        Login
-      </button>
+             <div className="absolute top-4 right-4 z-50">
+                {/* Toggle Button */}
+                <button
+                    onClick={() => setShowMenu(!showMenu)}
+                    className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                >
+                    {showMenu ? "Close Menu" : "☰ Menu"}
+                </button>
+
+                {/* AskAnything + Signup Buttons */}
+                {showMenu && (
+                    <div className="flex flex-col items-end gap-2 mt-2">
+                        <button
+                            onClick={() => window.location.href = '/'}
+                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                        >
+                            AskAnything
+                        </button>
+
+                        <button
+                            onClick={() => window.location.href = '/login'}
+                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                        >
+                            login
+                        </button>
+                    </div>
+                )}
+            </div>
         </div>
 
     )

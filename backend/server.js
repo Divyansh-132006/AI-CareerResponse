@@ -22,7 +22,7 @@ mongoose.connect(process.env.MongoPassword, {
   console.error("❌ MongoDB connection error:", err);
 });
 app.use(cors({
-  origin: 'https://ai-careerresponse-2.onrender.com',
+  origin: 'https://darling-bavarois-e52057.netlify.app',
   credentials: true
 }));
 

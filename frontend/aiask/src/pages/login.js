@@ -4,6 +4,7 @@ function Login() {
       const navigate = useNavigate();
     const [email, setusername] = useState('');
     const [password, setpassword] = useState('');
+      const [showMenu, setShowMenu] = useState(false);
 
     const handlelogin = async () => {
         if (!email || !password) return alert("Username and Password are required ");
@@ -59,19 +60,7 @@ function Login() {
                     Login
                 </button>
             </div>
-             <button
-                 onClick={() => window.location.href = '/'}
-        className="absolute top-4 right-4 z-50 bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition "
-      >
-      AskAnything
-      </button>
-  
-      <button
-          onClick={() => window.location.href = '/signup'}
-        className="absolute top-16 right-12 z-50 bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition "
-      >
-        Signup
-      </button>
+          
         </div>
 
 

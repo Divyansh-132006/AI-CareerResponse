@@ -9,6 +9,7 @@ function AiResponse() {
     const [answer, setAnswer] = useState('');
     const [loading, setLoading] = useState(false);
     const [showAskAnything, setShowAskAnything] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     const [file, setFile] = useState(null);
 
 
@@ -161,27 +162,48 @@ function AiResponse() {
                     )}
                 </>
             )}
-
-            <button
-                onClick={() => setShowAskAnything(!showAskAnything)}
-                className="absolute top-4 right-4 z-50 bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition "
-            >
-                {showAskAnything ? "Back to Roadmap" : "Ask Anything"}
-            </button>
-            <div className="flex gap-2  absolute top-16 right-4 z-50">
-                <button
-                    onClick={() => window.location.href = '/signup'}
-                    className=" bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition "
-                >
-                    Signup
-                </button>
+<div className="absolute top-4 right-4 z-50">
 
                 <button
-                    onClick={() => window.location.href = '/login'}
-                    className=" bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition "
+                    onClick={() => setShowMenu(!showMenu)}
+                    className="bg-white text-purple-600 font-bold px-4 py-0.5 rounded shadow hover:bg-purple-200 transition"
                 >
-                    Login
+                    {showMenu ? "Close Menu" : "☰ Menu"}
                 </button>
+
+
+                {showMenu && (
+                    <div className="flex flex-col gap-2 mt-2">
+                        <button
+                            onClick={() => setShowAskAnything(!showAskAnything)}
+                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                        >
+                            {showAskAnything ? "Back to Roadmap" : "Ask Anything"}
+
+                        </button>
+
+                        <button
+                            onClick={() => window.location.href = '/signup'}
+                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                        >
+                            Signup
+                        </button>
+
+                        <button
+                            onClick={() => window.location.href = '/login'}
+                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                        >
+                            Login
+                        </button>
+                        <button
+                            onClick={() => window.location.href = '/history'}
+                            className=" bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                        >
+                            History
+                        </button>
+
+                    </div>
+                )}
             </div>
         </div>
     );

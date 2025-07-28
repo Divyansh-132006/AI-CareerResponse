@@ -6,6 +6,8 @@ import Signup from "./pages/signup.js";
 
 
 function App() {
+  console.log("Deploy fix test");
+
   return (
     <Router>
       <Routes>

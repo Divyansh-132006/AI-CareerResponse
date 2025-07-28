@@ -12,7 +12,6 @@ function AiResponse() {
     const [showMenu, setShowMenu] = useState(false);
     const [file, setFile] = useState(null);
 
-
     const handleGenerate = async () => {
         if (!goal || !skills) {
             return alert("Form khali hai babu");
@@ -131,19 +130,19 @@ function AiResponse() {
                             value={skills}
                             onChange={(e) => setskills(e.target.value)}
                         />
-                         <input
-                        type="file"
-                        name="resume"
-                        accept=".pdf"
-                        onChange={(e) => setFile(e.target.files[0])}
-                        className="mb-4 text-sm"
-                    />
-                    <button
-                        onClick={handleResumeAnalyze}
-                        className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700"
-                    >
-                        Analyze Resume
-                    </button>
+                        <input
+                            type="file"
+                            name="resume"
+                            accept=".pdf"
+                            onChange={(e) => setFile(e.target.files[0])}
+                            className="mb-4 text-sm"
+                        />
+                        <button
+                            onClick={handleResumeAnalyze}
+                            className="bg-purple-600 text-white px-4 py-2 mb-4 rounded hover:bg-purple-700"
+                        >
+                            Analyze Resume
+                        </button>
                         <button
                             onClick={handleGenerate}
                             className="bg-purple-600 text-white font-semibold px-4 py-2 rounded hover:bg-purple-700 w-full"
@@ -151,7 +150,7 @@ function AiResponse() {
                             Generate Roadmap
                         </button>
                     </div>
-                   
+
 
 
                     {roadmap && (
@@ -162,55 +161,57 @@ function AiResponse() {
                     )}
                 </>
             )}
-<div className="absolute top-4 right-4 z-50">
 
-                <button
-                    onClick={() => setShowMenu(!showMenu)}
-                    className="bg-white text-purple-600 font-bold px-4 py-0.5 rounded shadow hover:bg-purple-200 transition"
-                >
-                    {showMenu ? "Close Menu" : "☰ Menu"}
-                </button>
+            <div className="absolute top-4 right-4 z-50">
 
 
-                {showMenu && (
-                    <div className="flex flex-col gap-2 mt-2">
-                        <button
-                            onClick={() => setShowAskAnything(!showAskAnything)}
-                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
-                        >
-                            {showAskAnything ? "Back to Roadmap" : "Ask Anything"}
+                <div className="absolute top-4 right-4 z-50">
 
-                        </button>
+                    <button
+                        onClick={() => setShowMenu(!showMenu)}
+                        className="bg-white text-purple-600 font-bold px-4 py-0.5 rounded shadow hover:bg-purple-200 transition"
+                    >
+                        {showMenu ? "Close Menu" : "☰ Menu"}
+                    </button>
 
-                        <button
-                            onClick={() => window.location.href = '/signup'}
-                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
-                        >
-                            Signup
-                        </button>
 
-                        <button
-                            onClick={() => window.location.href = '/login'}
-                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
-                        >
-                            Login
-                        </button>
-                        <button
-                            onClick={() => window.location.href = '/history'}
-                            className=" bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
-                        >
-                            History
-                        </button>
+                    {showMenu && (
+                        <div className="flex flex-col gap-2 mt-2">
+                            <button
+                                onClick={() => setShowAskAnything(!showAskAnything)}
+                                className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                            >
+                                {showAskAnything ? "Back to Roadmap" : "Ask Anything"}
 
-                    </div>
-                )}
+                            </button>
+
+                            <button
+                                onClick={() => window.location.href = '/signup'}
+                                className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                            >
+                                Signup
+                            </button>
+
+                            <button
+                                onClick={() => window.location.href = '/login'}
+                                className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                            >
+                                Login
+                            </button>
+                            <button
+                                onClick={() => window.location.href = '/history'}
+                                className=" bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                            >
+                                History
+                            </button>
+
+                        </div>
+                    )}
+                </div>
             </div>
-        </div>
-    );
+        </div>);
 
 }
 
 export default AiResponse;
-
-
 

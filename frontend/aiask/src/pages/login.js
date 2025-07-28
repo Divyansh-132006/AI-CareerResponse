@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 function Login() {
-      const navigate = useNavigate();
+    const navigate = useNavigate();
     const [email, setusername] = useState('');
     const [password, setpassword] = useState('');
-      const [showMenu, setShowMenu] = useState(false);
+
+    const [showMenu, setShowMenu] = useState(false);
+
+   
+
 
     const handlelogin = async () => {
         if (!email || !password) return alert("Username and Password are required ");
@@ -60,7 +64,38 @@ function Login() {
                     Login
                 </button>
             </div>
-          
+
+
+
+            <div className="absolute top-4 right-4 z-50">
+                {/* Toggle Button */}
+                <button
+                    onClick={() => setShowMenu(!showMenu)}
+                    className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                >
+                    {showMenu ? "Close Menu" : "☰ Menu"}
+                </button>
+
+                {/* AskAnything + Signup Buttons */}
+                {showMenu && (
+                    <div className="flex flex-col items-end gap-2 mt-2">
+                        <button
+                            onClick={() => window.location.href = '/'}
+                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                        >
+                            AskAnything
+                        </button>
+
+                        <button
+                            onClick={() => window.location.href = '/signup'}
+                            className="bg-white text-purple-600 font-bold px-4 py-2 rounded shadow hover:bg-purple-200 transition"
+                        >
+                            Signup
+                        </button>
+                    </div>
+                )}
+            </div>
+
         </div>
 
 

@@ -1,39 +1,4 @@
-// import multer from 'multer';
-// // import pdfParse from 'pdf-parse';
-// import fs from 'fs';
-// import { Router } from 'express';
-// import model from "../../utility/geminiClient.js";
 
-// const upload = multer({ dest: "uploads/" }); // Don't forget to mkdir uploads
-
-// const router = Router();
-
-// router.post('/resume', upload.single('resume'), async (req, res) => {
-//   try {
-//     const filePath = req.file.path;
-//     const pdfBuffer = fs.readFileSync(filePath);  // ✅ correct usage
-
-//     const data = await pdfParse(pdfBuffer);
-//     const resumeText = data.text;
-
-//     const result = await model.generateContent({
-//       contents: [
-//         {
-//           role: 'user',
-//           parts: [{ text: `Give professional feedback on this resume:\n\n${resumeText}` }],
-//         },
-//       ],
-//     });
-
-//     const aiResponse = await result.response.text();
-//     res.json({ feedback: aiResponse });
-//   } catch (err) {
-//     console.error('Resume analysis error:', err.message);
-//     res.status(500).json({ error: 'Failed to analyze resume', message: err.message });
-//   }
-// });
-
-// export default router;
 
 
 import { Router } from "express";

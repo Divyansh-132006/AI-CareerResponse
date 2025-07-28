@@ -7,6 +7,7 @@ import login from './src/routes/auth.js';
 import signup from './src/routes/auth.js';
 import resume from './src/routes/ai.js';
 
+
 dotenv.config();
   
 
@@ -25,6 +26,7 @@ app.use(cors({
   credentials: true
 }));
 
+
 app.use(cors());
 app.use(express.json());
 
@@ -33,6 +35,7 @@ app.use('/api/ai/ask', aiRoutes);
 app.use('/api/ai/', login);
 app.use('/api/ai/', signup);
 app.use('/api/ai/', resume);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

@@ -1,25 +1,33 @@
 import { useState } from 'react';
- import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function Signup(){
+function Signup() {
     const navigate = useNavigate();
-    const [username, setusername]= useState('');
-    const [email, setemail]= useState('');
-    const [password, setpassword]= useState('');
+    const [username, setusername] = useState('');
+    const [email, setemail] = useState('');
+    const [password, setpassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
- const [showMenu, setShowMenu] = useState(false);
+
+    const [showMenu, setShowMenu] = useState(false);
+;
+
+
 
     const handleSignup = async () => {
         if (!username || !email || !password || !confirmPassword) {
             return alert("All fields are required");
         }
-        try{
-            if( password !== confirmPassword) {
+        try {
+            if (password !== confirmPassword) {
                 return alert("Passwords do not match");
             }
             const response = await fetch('https://ai-careerresponse.onrender.com/api/ai/signup', {
-                 method: "POST",
-                      headers: { 'Content-Type': 'application/json' },
+
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+
+       
+
                 body: JSON.stringify({ username, password, email })
             })
             const data = await response.json();
@@ -38,7 +46,7 @@ function Signup(){
     }
 
     return (
-         <div className="min-h-screen bg-gradient-to-br from-purple-500 to-indigo-600 flex flex-col items-center text-white p-4 relative">
+        <div className="min-h-screen bg-gradient-to-br from-purple-500 to-indigo-600 flex flex-col items-center text-white p-4 relative">
             <div className="bg-white text-center text-gray-800 px-6 py-4 rounded-xl shadow-xl mt-8 w-full max-w-2xl animate-floatY">
                 <h2 className="text-xl font-bold text-purple-600 mb-2">Welcome to Career Advisor</h2>
             </div>
@@ -85,7 +93,11 @@ function Signup(){
                     Signup
                 </button>
             </div>
-             <div className="absolute top-4 right-4 z-50">
+
+            <div className="absolute top-4 right-4 z-50">
+
+            <div className="absolute top-4 right-4 z-50">
+
                 {/* Toggle Button */}
                 <button
                     onClick={() => setShowMenu(!showMenu)}
@@ -93,6 +105,7 @@ function Signup(){
                 >
                     {showMenu ? "Close Menu" : "☰ Menu"}
                 </button>
+
 
                 {/* AskAnything + Signup Buttons */}
                 {showMenu && (
@@ -114,7 +127,7 @@ function Signup(){
                 )}
             </div>
         </div>
-
+        </div>
     )
 
 }

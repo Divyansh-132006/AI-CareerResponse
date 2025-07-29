@@ -242,7 +242,7 @@ function AiResponse() {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/ai/roadmap', {
+            const response = await fetch('https://ai-careerresponse.onrender.com/api/ai/roadmap', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ goal, skills })
@@ -254,7 +254,7 @@ function AiResponse() {
             // ✅ Save to history
             const user = JSON.parse(localStorage.getItem("user"));
             console.log("🧠 Saving for:", user?.email);
-            await fetch('http://localhost:5000/api/ai/savehistory', {
+            await fetch('https://ai-careerresponse.onrender.com/api/ai/savehistory', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -281,7 +281,7 @@ function AiResponse() {
         const user = JSON.parse(localStorage.getItem("user"));
 
         try {
-            const res = await fetch("http://localhost:5000/api/ai/ask", {
+            const res = await fetch("https://ai-careerresponse.onrender.com/api/ai/ask", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ query: prompt }),
@@ -292,7 +292,7 @@ function AiResponse() {
 
             // ✅ Save history only if data is valid
             if (user?.email && prompt && data.answer) {
-                await fetch("http://localhost:5000/api/ai/savehistory", {
+                await fetch("https://ai-careerresponse.onrender.com/api/ai/savehistory", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -318,7 +318,7 @@ function AiResponse() {
 
         setLoading(true);
         try {
-            const res = await fetch("http://localhost:5000/api/ai/resume", {
+            const res = await fetch("https://ai-careerresponse.onrender.com/api/ai/resume", {
                 method: "POST",
                 body: formData,
             });
@@ -328,7 +328,7 @@ function AiResponse() {
 
             // ✅ Save to history
             const user = JSON.parse(localStorage.getItem("user"));
-            await fetch('http://localhost:5000/api/ai/savehistory', {
+            await fetch('https://ai-careerresponse.onrender.com/api/ai/savehistory', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

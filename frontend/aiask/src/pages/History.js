@@ -16,7 +16,7 @@ function History() {
 
    const fetchHistory = async () => {
   try {
-    const res = await fetch(`http://localhost:5000/api/ai/user/history?email=${encodeURIComponent(user.email)}`);
+    const res = await fetch(`https://ai-careerresponse.onrender.com/api/ai/user/history?email=${encodeURIComponent(user.email)}`);
     const data = await res.json();
 
     console.log("📦 Raw data received:", data);  // <-- Add this line

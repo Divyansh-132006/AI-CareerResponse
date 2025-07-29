@@ -71,7 +71,7 @@ mongoose.connect(process.env.MongoPassword, {
   console.error("❌ MongoDB connection error:", err);
 });
 app.use(cors({
-  origin: 'https://ai-careerresponse-2.onrender.com',
+  origin: 'https://helpful-squirrel-c461ce.netlify.app/',
   credentials: true
 }));
 // app.use(cors({

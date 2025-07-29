@@ -71,7 +71,7 @@ mongoose.connect(process.env.MongoPassword, {
   console.error("❌ MongoDB connection error:", err);
 });
 app.use(cors({
-  origin: 'https://melodic-selkie-5a91c4.netlify.app/',
+  origin: 'https://melodic-selkie-5a91c4.netlify.app',
   credentials: true
 }));
 // app.use(cors({
@@ -89,7 +89,9 @@ app.use('/api/ai/', login);
 app.use('/api/ai/', signup);
 app.use('/api/ai/', resume);
 app.use('/api/ai/', historyroutes);
-
+ app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

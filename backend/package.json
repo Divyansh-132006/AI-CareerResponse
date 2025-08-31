@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "AI Career Mentor Backend",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",

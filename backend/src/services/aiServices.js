@@ -10,15 +10,20 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
  async function careerroadmap(goal, skills) {
   try {
     const prompt = `
-You're an AI career mentor.
+You are an experienced AI career mentor specializing in personalized guidance.
 
-Give a realistic step-by-step career roadmap for someone who wants to become a ${goal}.
-They already know: ${skills}.
+Your task is to create a detailed, realistic, and actionable step-by-step career roadmap for someone who wants to become a ${goals}. 
+The person already has the following skills:${skills}.
 
-Return the roadmap as plain text only.
-Do not use any Markdown formatting like **bold**, ## headers, or hyphen (-) bullets.
-Number each step clearly, like "Step 1:", "Step 2:", etc.
-Use a clean and readable format suitable for plain text display.
+Instructions:
+1. Provide the roadmap in plain text only (no Markdown, no special characters like *, #, or -).
+2. Number each step explicitly in this format: Step 1:, Step 2:, Step 3:, etc.
+3. Each step should be clear, concise, and actionable (avoid vague suggestions).
+4. Cover essential phases such as foundational knowledge, advanced skills, practical projects, certifications, portfolio building, networking, and job preparation.
+5. If applicable, include estimated timeframes for each step (e.g., 2-3 months).
+6. Use simple and professional language, suitable for direct display in a text interface.
+
+Return only the roadmap, nothing else.;
 `;
 
     const result = await model.generateContent(prompt);

@@ -41,34 +41,40 @@ Return only the roadmap, nothing else.;
 
   try {
     const result = await model.generateContent({
-      contents: [
+   contents: [
+  {
+    role: "user",
+    parts: [
       {
-  role: "user",
-  parts: [
-    {
-      text: `You are a highly knowledgeable and helpful AI career mentor.
+        text: `You are an experienced and highly knowledgeable AI career mentor.
 
-Your task:
-1. Understand the user's request and context carefully.
-2. Provide a clear, accurate, and practical response in simple, easy-to-understand language.
-3. Avoid unnecessary jargon or overly complex explanations.
-4. Structure the answer logically and concisely so that it is actionable and helpful.
+Your goal is to provide the most accurate, practical, and actionable career advice based on the user's request.
+
+Instructions:
+1. Read and understand the question and context carefully.
+2. Give a clear, detailed, and realistic answer using simple and easy-to-understand language.
+3. Avoid unnecessary jargon, technical complexity, or irrelevant details.
+4. Organize the response in a logical sequence that makes it actionable and easy to follow.
 
 Question:
 ${prompt}
 
-Important:
-- Do not include any irrelevant information.
-- Keep the tone friendly, professional, and supportive.
-- If the response involves steps or a process, number them clearly (Step 1:, Step 2:, etc.).
-- Return the response in plain text without special characters, Markdown, or extra formatting.
+Formatting Rules:
+- Write the answer in plain text only (no Markdown, no special characters like *, #, or -).
+- If the response involves multiple steps or a process, number each step explicitly in this format: Step 1:, Step 2:, Step 3:, etc.
+- Each step should be clear, concise, and actionable.
+- Keep the tone professional, supportive, and motivational.
+
+Final Requirement:
+Return only the response without repeating the instructions above. Do not add any extra notes or disclaimers.
 
 Now provide the best possible response.
 `
-    }
-  ]
-}
-);
+      }
+    ]
+  }
+]
+
 
     const response = await result.response.text();
     return response;

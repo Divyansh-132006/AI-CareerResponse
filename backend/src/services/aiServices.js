@@ -42,12 +42,33 @@ Return only the roadmap, nothing else.;
   try {
     const result = await model.generateContent({
       contents: [
-        {
-          role: "user",
-          parts: [{ text: `You are a helpful AI assistant. Answer this question simply:\n\n${prompt}` }]
-        }
-      ]
-    });
+      {
+  role: "user",
+  parts: [
+    {
+      text: `You are a highly knowledgeable and helpful AI career mentor.
+
+Your task:
+1. Understand the user's request and context carefully.
+2. Provide a clear, accurate, and practical response in simple, easy-to-understand language.
+3. Avoid unnecessary jargon or overly complex explanations.
+4. Structure the answer logically and concisely so that it is actionable and helpful.
+
+Question:
+${prompt}
+
+Important:
+- Do not include any irrelevant information.
+- Keep the tone friendly, professional, and supportive.
+- If the response involves steps or a process, number them clearly (Step 1:, Step 2:, etc.).
+- Return the response in plain text without special characters, Markdown, or extra formatting.
+
+Now provide the best possible response.
+`
+    }
+  ]
+}
+);
 
     const response = await result.response.text();
     return response;

@@ -12,7 +12,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const prompt = `
 You are an experienced AI career mentor specializing in personalized guidance.
 
-Your task is to create a detailed, realistic, and actionable step-by-step career roadmap for someone who wants to become a ${goals}. 
+Your task is to create a detailed, realistic, and actionable step-by-step career roadmap for someone who wants to become a ${goal}. 
 The person already has the following skills:${skills}.
 
 Instructions:

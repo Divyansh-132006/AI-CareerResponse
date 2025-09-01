@@ -74,7 +74,7 @@ Now provide the best possible response.
     ]
   }
 ]
-
+    });
 
     const response = await result.response.text();
     return response;

@@ -1,7 +1,7 @@
 🧠 AI Career Mentor
 An AI-powered MERN stack application that helps users identify and shape their career paths based on AI-generated insights. The platform provides personalized suggestions, user history, authentication, and a clean, intuitive interface.
 
-👉 Explore the project live: https://melodic-selkie-5a91c4.netlify.app/
+👉 Explore the project live: https://aicareer-advisor.netlify.app/
 
 (Hosted on Netlify — responsive and mobile-friendly!)
 

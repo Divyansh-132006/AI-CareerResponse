@@ -25,7 +25,7 @@ mongoose.connect(process.env.MongoPassword, {
   console.error("❌ MongoDB connection error:", err);
 });
 app.use(cors({
-  origin: 'https://aicareer-advisor.netlify.app/',
+  origin: 'https://melodic-selkie-5a91c4.netlify.app',
   credentials: true
 }));
 // app.use(cors({
